@@ -16,5 +16,5 @@ crons = ["0 1 * * *"]
 
 [vars]
 # 管理页登录密码，默认 admin123；可在 Cloudflare 后台的 Variables 或此处修改后重新部署
-ADMIN_PASSWORD = "amwwfnia"
+ADMIN_PASSWORD = "admin123"
 APP_NAME = "keepdomain"
