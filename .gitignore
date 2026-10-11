@@ -1,0 +1,28 @@
+# 1. 依赖与包管理器缓存（体积巨大，绝对不要上传）
+node_modules/
+.npm/
+
+# 2. Cloudflare Wrangler 本地运行缓存与构建产物
+.wrangler/
+dist/
+build/
+.mf/
+
+# 3. 本地 IDE 与工具配置
+.workbuddy/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 4. 环境变量与敏感密钥文件（防止 API Key 或 Token 泄露）
+.env
+.env.*
+!.env.example
+
+# 5. 系统临时文件与日志
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,20 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "keepdomain"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# D1 数据库：先用 `npx wrangler d1 create keepdomain` 拿到 database_id 后，替换下面这行
+[[d1_databases]]
+binding = "DB"
+database_name = "keepdomain"
+database_id = "d8c9dd32-1d0a-4a73-89da-2d30ad286e84"
+
+# 定时任务：每天 UTC 01:00（北京时间 09:00）触发一次
+# 想改发送时间：把 1 改成目标 UTC 小时（北京时间 = UTC 小时 + 8）
+[triggers]
+crons = ["0 1 * * *"]
+
+[vars]
+# 管理页登录密码，默认 admin123；可在 Cloudflare 后台的 Variables 或此处修改后重新部署
+ADMIN_PASSWORD = "amwwfnia"
+APP_NAME = "keepdomain"
